@@ -1,13 +1,20 @@
 plugins {
-    id("java-platform")
-    id("maven-publish")
+    `java-platform`
+    `maven-publish`
 }
-
-group = "com.sv.youapp.infrastructure"
-version = "1.0.0-SNAPSHOT"
 
 javaPlatform {
     allowDependencies()
+}
+
+allprojects{
+    group = "com.sv.youapp.infrastructure"
+    version = "1.0.0-SNAPSHOT"
+    apply(plugin = "maven-publish")
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
 }
 
 dependencies {
@@ -22,5 +29,3 @@ publishing {
         }
     }
 }
-
-

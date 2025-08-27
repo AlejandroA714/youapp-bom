@@ -1,9 +1,4 @@
 rootProject.name = "bom"
 
-pluginManagement {
-    includeBuild("build-logic")
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-    }
-}
+include(":formatter")
+project(":formatter").projectDir = file("build-logic")

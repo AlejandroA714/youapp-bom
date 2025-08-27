@@ -1,15 +1,6 @@
 plugins {
     kotlin("jvm") version "2.2.0"
     `java-gradle-plugin`
-    `maven-publish`
-}
-
-group = "com.sv.youapp.infrastructure"
-version = "1.0.0-SNAPSHOT"
-
-repositories {
-    gradlePluginPortal()
-    mavenCentral()
 }
 
 dependencies {
@@ -23,12 +14,10 @@ kotlin {
 gradlePlugin {
     plugins {
         create("formatterPlugin") {
-            id = "com.sv.youapp.formatter"
+            id = "$group.formatter"
             implementationClass = "com.sv.youapp.formatter.FormatterPlugin"
             displayName = "YouApp Formatter Plugin"
             description = "Aplica y configura Spotless (ktlint, googleJavaFormat, etc.)"
         }
     }
 }
-
-
