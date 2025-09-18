@@ -18,9 +18,9 @@ allprojects{
 }
 
 dependencies {
-    api(platform("org.springframework.boot:spring-boot-dependencies:3.5.5"))
+    api(platform(libs.spring.boot.dependencies))
     constraints {
-        api("org.springframework.security:spring-security-oauth2-authorization-server:1.3.1")
+        api(libs.spring.authorization)
     }
 }
 
